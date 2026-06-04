@@ -385,6 +385,7 @@ function Section({ title, count, icon, children }) {
 
 // ─── Main App ───────────────────────────────────────────────────────────
 export default function App() {
+  // ALL hooks must be called unconditionally before any early return
   const [unlocked, setUnlocked] = useState(isAuthValid())
   const [search, setSearch] = useState('')
   const [lastOpened, setLastOpenedState] = useState(getLastOpened())
@@ -393,17 +394,6 @@ export default function App() {
     const t = setInterval(() => setLastOpenedState(getLastOpened()), 30000)
     return () => clearInterval(t)
   }, [])
-
-  if (!unlocked) {
-    return <PasswordGate onUnlock={() => setUnlocked(true)} />
-  }
-
-  const handleOpen = (app) => {
-    if (!app || !app.url) return
-    setLastOpened(app.id)
-    setLastOpenedState(getLastOpened())
-    window.open(app.url, '_blank', 'noopener,noreferrer')
-  }
 
   const grouped = useMemo(() => {
     const q = search.trim().toLowerCase()
@@ -421,6 +411,18 @@ export default function App() {
     })
     return map
   }, [search])
+
+  // Early returns ONLY after all hooks have run
+  if (!unlocked) {
+    return <PasswordGate onUnlock={() => setUnlocked(true)} />
+  }
+
+  const handleOpen = (app) => {
+    if (!app || !app.url) return
+    setLastOpened(app.id)
+    setLastOpenedState(getLastOpened())
+    window.open(app.url, '_blank', 'noopener,noreferrer')
+  }
 
   const totalApps = APPS.filter((a) => !a.comingSoon).length
   const visibleApps = Object.values(grouped).flat().length
