@@ -10,6 +10,14 @@ export const APPS = [
     group: 'Karaikudi Annalakshmi'
   },
   {
+    id: 'kal-purchases',
+    name: 'KAL Purchases',
+    description: 'Vendor purchase tracking',
+    url: 'https://kal-purchases.vercel.app/',
+    icon: 'ti-shopping-cart',
+    group: 'Karaikudi Annalakshmi'
+  },
+  {
     id: 'kitchen-maint',
     name: 'Kitchen Maintenance',
     description: 'KAL kitchen equipment log',
@@ -35,6 +43,14 @@ export const APPS = [
   },
 
   // Koviloor Madalayam
+  {
+    id: 'koviloor-payroll',
+    name: 'Madalayam Payroll',
+    description: 'Koviloor Madalayam staff salary',
+    url: 'https://koviloor-payroll.vercel.app/',
+    icon: 'ti-cash',
+    group: 'Koviloor Madalayam'
+  },
   {
     id: 'property',
     name: 'Property Management',
@@ -75,6 +91,14 @@ export const APPS = [
     icon: 'ti-briefcase',
     group: 'Koviloor Madalayam'
   },
+  {
+    id: 'nagarathar-matrimony',
+    name: 'Nagarathar Matrimony',
+    description: 'Community matrimony service',
+    url: 'https://nagaratharvaazhvinai.com/',
+    icon: 'ti-heart',
+    group: 'Koviloor Madalayam'
+  },
 
   // Kasi / Varanasi
   {
@@ -106,7 +130,6 @@ export const APPS = [
   }
 ]
 
-// Order groups display in
 export const GROUP_ORDER = [
   'Karaikudi Annalakshmi',
   'Koviloor Madalayam',
