@@ -62,9 +62,17 @@ export const APPS = [
   {
     id: 'koviloor-kitchen',
     name: 'Koviloor Kitchen',
-    description: 'Recipes & inventory',
+    description: 'Menu planning, recipes & dish-wise reports',
     url: 'https://koviloor-kitchen.vercel.app/',
     icon: 'ti-chef-hat',
+    group: 'Koviloor Madalayam'
+  },
+  {
+    id: 'koviloor-kitchen-purchase',
+    name: 'Kitchen Purchase List',
+    description: 'Shopping list by date range & session',
+    url: 'https://koviloor-kitchen.vercel.app/#rep_shop',
+    icon: 'ti-shopping-cart',
     group: 'Koviloor Madalayam'
   },
   {
